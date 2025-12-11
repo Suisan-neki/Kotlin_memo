@@ -15,10 +15,13 @@ import kotlinx.datetime.*
 private val repo = SqlRepository()
 
 fun main() {
+    // PORT が指定されていればそれを使用、なければ 5000 を使用
     val port = System.getenv("PORT")?.toIntOrNull() ?: 5000
+
     // Initialize database (DATA_DIR/app.db)
     Database.init()
-    embeddedServer(Netty, port = port) {
+
+    embeddedServer(Netty, host = "0.0.0.0", port = port) {
         configureSerialization()
         configureRouting()
     }.start(wait = true)

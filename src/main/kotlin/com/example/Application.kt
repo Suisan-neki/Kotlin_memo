@@ -15,7 +15,7 @@ import kotlinx.datetime.*
 private val repo = SqlRepository()
 
 fun main() {
-    val port = System.getenv("PORT")?.toIntOrNull() ?: 8080
+    val port = System.getenv("PORT")?.toIntOrNull() ?: 5000
     // Initialize database (DATA_DIR/app.db)
     Database.init()
     embeddedServer(Netty, port = port) {

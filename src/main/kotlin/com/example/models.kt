@@ -21,6 +21,18 @@ data class WorkSession(
 data class WageUpdateRequest(val hourlyWage: Int)
 
 @Serializable
+data class LoginRequest(val userId: String)
+
+@Serializable
+data class StartSessionRequest(val hourlyWageOverride: Int? = null)
+
+@Serializable
+data class UpdateSessionRequest(
+    val startTime: String? = null,
+    val endTime: String? = null
+)
+
+@Serializable
 data class ErrorResponse(val error: String)
 
 @Serializable

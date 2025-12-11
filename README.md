@@ -32,6 +32,25 @@ curl http://localhost:8080/health
 # => {"status":"ok"}
 ```
 
+## Web UI（ブラウザ）
+
+サーバー起動後、以下にアクセスしてください。
+
+- URL: `http://localhost:8080/`
+
+提供機能:
+- 時給の取得・設定（設定は即時反映）
+- タイマー開始 / 停止（進行中は開始ボタンが無効）
+- 現在の稼ぎのリアルタイム表示（1秒ごとに更新）
+- 今日の稼ぎ / 今月の稼ぎの表示（停止時に再取得）
+
+実装ファイル:
+- `src/main/resources/static/index.html`
+- `src/main/resources/static/style.css`
+- `src/main/resources/static/script.js`
+
+Ktor 側のルーティングで `/` は `/index.html` にリダイレクトされ、`/` 配下で `static` ディレクトリのリソースが配信されます。
+
 ## API 一覧
 
 共通: `Content-Type: application/json; charset=utf-8`

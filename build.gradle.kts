@@ -21,6 +21,9 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:$datetimeVersion")
 
+    // SQLite JDBC driver
+    implementation("org.xerial:sqlite-jdbc:3.46.0.0")
+
     testImplementation(kotlin("test"))
 }
 
